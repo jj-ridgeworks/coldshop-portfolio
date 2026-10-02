@@ -1,1 +1,33 @@
-hello world
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta  charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ config.title }}</title>
+  <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}">
+</head></html>
+
+<body>
+
+  <div class="container">
+
+    <header class="site-header">
+      <h1>coldshop</h1>
+
+      <nav class="site-nav">
+       <a href="#projects">projects</a>
+       <a href="https://coldshop.dev">writing</a>
+      </nav>
+    </header>
+
+    <main>
+     <p>hello world. building a minimal, high-performance static space.</p>
+    </main>
+
+  </div>
+
+</body>
+
+</html>
