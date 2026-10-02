@@ -1,20 +1,32 @@
 $font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-$color-bg: #fffbf7;
-$color-text: #18181b;
-$color-muted: #71717a;
+
+:root {
+  --bg-color: #fffbf7;
+  --text-color: #18181b;
+  --muted-color: #71717a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #09090b;
+    --text-color: #f4f4f5;
+    --muted-color: #a1a1aa;
+  }
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: $color-bg;
-  color: $color-text;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: $font-sans;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -41,13 +53,13 @@ body {
   gap: 1.5rem;
 
   a {
-    color: $color-muted;
+    color: var(--muted-color);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.15s ease;
 
     &:hover {
-      color: $color-text; 
+      color: var(--text-color);
     }
   }
 }
@@ -55,7 +67,7 @@ body {
 main {
   p {
     font-size: 1.1rem;
-    color: color-text;
+    color: var(--text-color);
   }
 }
 
