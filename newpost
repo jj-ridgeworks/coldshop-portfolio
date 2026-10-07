@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+read -rp "title: " title
+esc=${title//\\/\\\\}
+esc=${esc//\"/\\\"}
+slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')
+[ -n "$slug" ] || { echo "title can't be empty" >&2; exit 1; }
+
+dir="content/writing/$slug"
+[ -e "$dir" ] && { echo "already exists: $dir" >&2; exit 1; }
+mkdir -p "$dir"
+cat > "$dir/index.md" <<EOF
+---
+title: "$esc"
+date: $(date +%F)
+description: ""
+slug: $slug
+draft: true
+taxonomies:
+  tags: []
+---
+
+EOF
+${EDITOR:-nvim} "$dir/index.md"

@@ -1,49 +1,21 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+  <section id="about" class="about-section">
+    <h2>about</h2>
+    <p>I've always wanted to know how things work underneath, whether that's an old engine, a house, or the computer on my desk. A few years ago I turned that curiosity toward the systems I relied on every day and started learning them for myself.</p>
+    <p>That began with Linux administration. The more time I spent configuring and breaking my own machines, the more I wanted to understand how they could be attacked and defended, which eventually led me to earn my Security+. Today I run my own homelab and network, and I'm drawn to lightweight, minimal systems: low-overhead architectures, custom workflows, and clean codebases I can actually read end to end. I'd rather build something small that does exactly what I need than inherit a heavy framework I only half understand.</p>
+    <p>These days I'm learning Rust alongside a long-term study plan in reverse engineering and malware analysis, starting from the fundamentals of how binaries are put together. It's slow, deliberate work, and I document what I learn as I go.</p>
+    <p>I also give community talks on scams and online privacy, where I focus on taking topics that feel confusing or intimidating and making them clear enough to actually use.</p>
+  </section>
 
-<html lang="en">
-
-<head>
-  <meta  charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ config.title }}</title>
-  <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) | safe }}">
-</head>
-
-<body>
-
-  <div class="container">
-
-    <header class="site-header">
-      <h1>coldshop</h1>
-      <nav class="site-nav">
-       <a href="#about">about</a>
-       <a href="#projects">projects</a>
-      </nav>
-    </header>
-
-    <main>
-     <section id="about" class="about-section">
-      <h2>about</h2>
-        <p>I've always wanted to know how things work underneath, whether that's an old engine, a house, or the computer on my desk. A few years ago I turned that curiosity toward the systems I relied on every day and started learning them for myself.</p>
-        <p>That began with Linux administration. The more time I spent configuring and breaking my own machines, the more I wanted to understand how they could be attacked and defended, which eventually led me to earn my Security+. Today I run my own homelab and network, and I'm drawn to lightweight, minimal systems: low-overhead architectures, custom workflows, and clean codebases I can actually read end to end. I'd rather build something small that does exactly what I need than inherit a heavy framework I only half understand.</p>
-        <p>These days I'm learning Rust alongside a long-term study plan in reverse engineering and malware analysis, starting from the fundamentals of how binaries are put together. It's slow, deliberate work, and I document what I learn as I go.</p>
-        <p>I also give community talks on scams and online privacy, where I focus on taking topics that feel confusing or intimidating and making them clear enough to actually use.</p>
-     </section>
-     
-     <section id="projects" class="projects-section">
-        <h2>projects</h2>
-        <ul class="project-list">
-         <li>
-          <h3>self-hosted news river</h3>
-          <p>A personal news river that pulls fresh articles from global outlets, tech sites, and the podcasts and YouTube channels I follow, all in one quiet page. Small Rust fetchers poll public, keyless feeds on a schedule, with a few panels on the side for machine health and LLM-written notes. No database, no API keys, and no public route.</p>
-          <p class="tech">rust · shell · systemd · json · tailscale</p>
-         </li>
-        </ul>
-     </section>
-    </main>
-
-  </div>
-
-</body>
-
-</html>
+  <section id="projects" class="projects-section">
+    <h2>projects</h2>
+    <ul class="project-list">
+      <li>
+        <h3>self-hosted news river</h3>
+        <p>A personal news river that pulls fresh articles from global outlets, tech sites, and the podcasts and YouTube channels I follow, all in one quiet page. Small Rust fetchers poll public, keyless feeds on a schedule, with a few panels on the side for machine health and LLM-written notes. No database, no API keys, and no public route.</p>
+        <p class="tech">rust · shell · systemd · json · tailscale</p>
+      </li>
+    </ul>
+  </section>
+{% endblock content %}

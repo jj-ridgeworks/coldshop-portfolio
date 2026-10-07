@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  {% block meta %}{% endblock meta %}
+  <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) | safe }}">
+  <link rel="alternate" type="application/atom+xml" title="coldshop writing" href="/writing/atom.xml">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1><a href="/">coldshop</a></h1>
+      <nav class="site-nav">
+        <a href="/#about">about</a>
+        <a href="/#projects">projects</a>
+        <a href="/writing/">writing</a>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+  </div>
+</body>
+</html>
