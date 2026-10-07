@@ -72,26 +72,30 @@ body {
 
 main {
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-color);
   }
 }
 
 section {
   scroll-margin-top: 5rem;
+
+  & + section {
+    margin-top: 5rem;
+  }
+
+  h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--muted-color);
+    margin: 0 0 1.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
-}
-
-section h2 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--muted-color);
-  margin: 0 0 1.5rem;
 }
 
 .project-list {
